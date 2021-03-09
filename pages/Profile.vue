@@ -4,43 +4,61 @@
     <div class="md:flex md:mt-16">
       <div class="md:w-3/12">
         <img class="md:w-24 md:h-auto" loading="lazy" decoding="async" src="~/assets/images/profile.svg" alt="">
-        <button class="md:ml-6 font-medium">Update</button>
+        <button class="md:ml-6 md:mt-4 font-medium focus:outline-none">Update</button>
       </div>
       <div class="md:w-9/12">
         <form action="">
           <div class="md:mb-6">
-            <label for="" class="text-gray-600 md:mb-2 md:inline-block">Name</label>
+            <label class="text-gray-600 md:mb-2 md:inline-block">Name</label>
             <div class="md:flex md:items-center">
-              <div>Sowmay</div>
-              <button class="md:ml-6 font-medium">Update</button>
+              <input v-if="allowUpdate.name" type="text" v-model="user.name"
+                     class="border border-gray-400 rounded outline-none md:py-1 md:px-2"
+                     name="name">
+              <div v-else>Sowmay</div>
+              <button type="button" @click="allowUpdateHandler('name')" class="md:ml-6 font-medium outline-none focus:outline-none">Update</button>
             </div>
           </div>
           <div class="md:mb-6">
-            <label for="" class="text-gray-600 md:mb-2 md:inline-block">Username</label>
+            <label class="text-gray-600 md:mb-2 md:inline-block">Username</label>
             <div class="md:flex md:items-center">
-              <div>@champ.sowmay</div>
-              <button class="md:ml-6 font-medium">Update</button>
+              <input v-if="allowUpdate.username" type="text" v-model="user.username"
+                     class="border border-gray-400 rounded outline-none md:py-1 md:px-2"
+                     name="name">
+              <div v-else>@champ.sowmay</div>
+              <button type="button" @click="allowUpdateHandler('username')"
+                      class="md:ml-6 font-medium focus:outline-none outline-none">Update
+              </button>
             </div>
           </div>
           <div class="md:mb-6">
-            <label for="" class="text-gray-600 md:mb-2 md:inline-block">Email</label>
+            <label class="text-gray-600 md:mb-2 md:inline-block">Email</label>
             <div class="md:flex md:items-center">
-              <div>champ.sowmay@gmail.com</div>
-              <button class="md:ml-6 font-medium">Update</button>
+              <input v-if="allowUpdate.email" type="text" v-model="user.email"
+                     class="border border-gray-400 rounded outline-none md:py-1 md:px-2"
+                     name="name">
+              <div v-else>champ.sowmay@gmail.com</div>
+              <button type="button" @click="allowUpdateHandler('email')"
+                      class="md:ml-6 font-medium focus:outline-none outline-none">Update
+              </button>
             </div>
           </div>
           <div class="md:mb-16">
-            <label for="" class="text-gray-600 md:mb-2 md:inline-block">Password</label>
+            <label class="text-gray-600 md:mb-2 md:inline-block">Password</label>
             <div class="md:flex md:items-center">
-              <div>******</div>
-              <button class="md:ml-6 font-medium">Update</button>
+              <input v-if="allowUpdate.password" type="password" v-model="user.password"
+                     class="border border-gray-400 rounded outline-none md:py-1 md:px-2"
+                     name="name">
+              <div v-else>●●●●●●●●</div>
+              <button type="button" @click="allowUpdateHandler('password')"
+                      class="md:ml-6 font-medium focus:outline-none outline-none">Update
+              </button>
             </div>
           </div>
           <div>
-            <label for="" class="md:mb-2 md:inline-block font-medium">Email Preference</label>
+            <label class="md:mb-2 md:inline-block font-medium">Email Preference</label>
             <div class="md:flex md:items-center">
               <div>Choose the types of emails you want to receive from HSD</div>
-              <button class="md:ml-6 font-medium">Update</button>
+              <button class="md:ml-6 font-medium focus:outline-none outline-none">Update</button>
             </div>
           </div>
         </form>
@@ -55,7 +73,28 @@
 
 <script>
 export default {
-  name: "Profile"
+  name: "Profile",
+  data() {
+    return {
+      user: {
+        name: 'Sowmay',
+        username: '@champ.sowmay',
+        email: 'champ.sowmay@gmail.com',
+        password: '123456'
+      },
+      allowUpdate: {
+        name: false,
+        username: false,
+        email: false,
+        password: false
+      }
+    }
+  },
+  methods: {
+    allowUpdateHandler(field) {
+      this.allowUpdate[field] = true
+    }
+  }
 }
 </script>
 

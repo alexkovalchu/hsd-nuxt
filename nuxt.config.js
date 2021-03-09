@@ -23,6 +23,10 @@ export default {
     ]
   },
 
+  tailwindcss:{
+    cssPath: '~/assets/css/tailwind.css',
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
