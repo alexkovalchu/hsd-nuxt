@@ -1,24 +1,23 @@
 <template>
-    <header class="bg-white shadow-md fixed">
-      <div class="flex justify-between items-center">
-        <a class="font-bold logo" href="">HSD</a>
-        <div class="flex items-center">
-          <img id="notification" src="~/assets/images/notification-icon.svg" alt="">
-          <img id="profile" src="~/assets/images/profile.svg" alt="">
-          <button>write</button>
-        </div>
+  <header class="bg-white shadow-sm">
+    <div class="flex justify-between items-center md:px-24 md:py-6">
+      <a class="font-bold logo" href="">HSD</a>
+      <div class="flex items-center">
+        <img id="notification" src="~/assets/images/notification-icon.svg" alt="">
+        <img id="profile" src="~/assets/images/profile.svg" alt="">
+        <button>write</button>
       </div>
-    </header>
+    </div>
+  </header>
 </template>
-<style scoped>
-header {
-  top: 0;
-  width: 100vw;
-}
-header > div {
-  padding: 20px 100px;
-}
 
+<script>
+export default {
+  name: "Header"
+}
+</script>
+
+<style scoped>
 header > div #notification {
   width: 20px;
   height: 20px;

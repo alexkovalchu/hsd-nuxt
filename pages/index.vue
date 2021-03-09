@@ -1,42 +1,40 @@
 <template>
-  <div class="wrapper">
-    <div id="content">
-      <h1 class="font-bold text-4xl">I was wrong about macOS Big Sur...</h1>
-      <p class="mb-8">
-        A month ago, I published my story about macOS Big Sur review. I wrote about how macOS Big Sur has a big design
-        overhaul, however with a performance bummer. Last time when I reviewed it, my early-2020 Base Model MacBook Pro
-        had a significant performance decrease in speed and battery life, which made me unhappy with the update. Take
-        note
-        that this was the first public release of macOS Big Sur.
-      </p>
-      <p class="mb-8">
-        Not long ago after I published that story, Apple released a new update for Big Sur, which is 11.1. I also
-        received
-        some feedback from the Medium community here saying that I used too much non-Apple application, which has a
-        significant hit on performance and battery (in particular, Google Chrome).
-      </p>
-      <p class="mb-8">
-        That’s why, I decided to have a little experiment, which is to go full-on Safari. I also decided to not charge
-        my
-        MacBook Pro not often and see how much it lasts for a single charge.
-      </p>
-      <p class="mb-8">The result was surprising to me and I have to admit that I ate up my own words on my previous
-        story. It is
-        crazy
-        how heavy the impact is from a third-party application. Well, Chrome is definitely a fast browser, but also fast
-        in draining my MacBook’s battery.</p>
-      <p class="mb-8">
-        My experience with Safari is very smooth, as I don’t need to worry about plugging my MacBook oftenly. Checking
-        emails, social media, watching YouTube and writing stories in Medium did not affect my battery significantly.
-        Plus, I also get better security with Safari with its latest tracking prevention update.
-      </p>
-      <p>
-        Last time when I use Safari in Catalina, YouTube only capable of showing 1080p videos at its max resolution.
-        Now,
-        the new update allows Safari to view up to 4k HDR content, which makes me happier. It means that I can continue
-        using Safari to watch high-quality videos.
-      </p>
-    </div>
+  <div id="content">
+    <h1 class="font-bold text-4xl">I was wrong about macOS Big Sur...</h1>
+    <p class="mb-8">
+      A month ago, I published my story about macOS Big Sur review. I wrote about how macOS Big Sur has a big design
+      overhaul, however with a performance bummer. Last time when I reviewed it, my early-2020 Base Model MacBook Pro
+      had a significant performance decrease in speed and battery life, which made me unhappy with the update. Take
+      note
+      that this was the first public release of macOS Big Sur.
+    </p>
+    <p class="mb-8">
+      Not long ago after I published that story, Apple released a new update for Big Sur, which is 11.1. I also
+      received
+      some feedback from the Medium community here saying that I used too much non-Apple application, which has a
+      significant hit on performance and battery (in particular, Google Chrome).
+    </p>
+    <p class="mb-8">
+      That’s why, I decided to have a little experiment, which is to go full-on Safari. I also decided to not charge
+      my
+      MacBook Pro not often and see how much it lasts for a single charge.
+    </p>
+    <p class="mb-8">The result was surprising to me and I have to admit that I ate up my own words on my previous
+      story. It is
+      crazy
+      how heavy the impact is from a third-party application. Well, Chrome is definitely a fast browser, but also fast
+      in draining my MacBook’s battery.</p>
+    <p class="mb-8">
+      My experience with Safari is very smooth, as I don’t need to worry about plugging my MacBook oftenly. Checking
+      emails, social media, watching YouTube and writing stories in Medium did not affect my battery significantly.
+      Plus, I also get better security with Safari with its latest tracking prevention update.
+    </p>
+    <p>
+      Last time when I use Safari in Catalina, YouTube only capable of showing 1080p videos at its max resolution.
+      Now,
+      the new update allows Safari to view up to 4k HDR content, which makes me happier. It means that I can continue
+      using Safari to watch high-quality videos.
+    </p>
     <div v-show="showIcon" :style="{
         left: `${left}px`,
         top: `${top}px`
@@ -98,18 +96,6 @@ export default {
       selectionRange.surroundContents(span);
       this.showIcon = false
       selection.removeAllRanges()
-      // let {startOffset, endOffset} = selectionRange
-      // let text = el.innerHTML;
-      // let newText, replace;
-      // if (text.match("</span>")) {
-      //   startOffset += (text.lastIndexOf('</span>') + 7)
-      //   endOffset += (text.lastIndexOf('</span>') + 7)
-      // }
-      // replace = `<span class='highlighted'>${selection.toString()}</span>`;
-      // newText = this.replaceBetween(text, startOffset, endOffset, replace)
-      //
-      // el.innerHTML = newText;
-      // this.showIcon = false
     },
     replaceBetween(origin, startIndex, endIndex, insertion) {
       return origin.substring(0, startIndex) + insertion + origin.substring(endIndex);
@@ -119,19 +105,7 @@ export default {
 </script>
 
 <style>
-.wrapper {
-  background: #fafafa;
-  font-family: 'Tinos', serif;
-}
 
-.highlighted {
-  background: #D3D3D3
-}
-
-.logo {
-  font-size: 30px;
-  font-weight: 700;
-}
 
 #content {
   margin: 60px 240px;
@@ -148,6 +122,8 @@ export default {
 #content p {
   font-size: 20px;
 }
+
+
 
 .highlightIcon {
   position: absolute;
