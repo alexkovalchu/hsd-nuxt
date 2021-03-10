@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="flex justify-between items-center md:px-24 md:py-6">
+    <div class="flex justify-between items-center md:px-24 md:py-3">
       <ul class="flex items-center list-none">
         <li><a href="">Account</a></li>
         <li><a href="">About</a></li>

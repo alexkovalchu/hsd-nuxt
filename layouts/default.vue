@@ -1,8 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header></Header>
     <Nuxt/>
-    <Footer></Footer>
   </div>
 </template>
 <script>
@@ -26,16 +24,8 @@ export default {
   font-family: 'Tinos', serif;
 }
 
-.highlighted {
-  background: #D3D3D3
-}
-
 .logo {
   font-size: 30px;
   font-weight: 700;
 }
-
-
-
-
 </style>

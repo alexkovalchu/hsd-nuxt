@@ -1,11 +1,9 @@
 <template>
-  <header class="bg-white shadow-sm">
-    <div class="flex justify-between items-center md:px-24 md:py-6">
+  <header class="bg-white shadow-md">
+    <div class="flex justify-between items-center md:px-24 md:py-3">
       <a class="font-bold logo" href="">HSD</a>
       <div class="flex items-center">
-        <img id="notification" src="~/assets/images/notification-icon.svg" alt="">
-        <img id="profile" src="~/assets/images/profile.svg" alt="">
-        <button>write</button>
+        <slot></slot>
       </div>
     </div>
   </header>
@@ -38,5 +36,6 @@ header > div button {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+  font-size: 14px;
 }
 </style>
