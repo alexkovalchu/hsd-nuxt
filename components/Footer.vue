@@ -5,7 +5,7 @@
         <li><a href="">Account</a></li>
         <li><a href="">About</a></li>
       </ul>
-      <a class="font-bold logo" href="">HSD</a>
+      <a class="font-bold logo" href=""><img class="inline-block md:mr-3" src="~/assets/images/logo-white.svg" alt="">HSD</a>
       <ul class="flex items-center list-none">
         <li><a href="">Help</a></li>
         <li><a href="">Privacy</a></li>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header>
-      <button>home</button>
+      <button class="primary-btn">home</button>
     </Header>
     <div class="vScreen font-roboto flex items-center">
       <div id="loginForm" class="md:mx-auto md:text-center">
@@ -87,7 +87,8 @@ export default {
 .vScreen {
   min-height: calc(100vh - 138px);
 }
-#loginForm{
+
+#loginForm {
   width: 380px;
 }
 </style>

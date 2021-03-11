@@ -3,7 +3,7 @@
     <Header>
       <img id="notification" src="~/assets/images/notification-icon.svg" alt="">
       <img id="profile" src="~/assets/images/profile.svg" alt="">
-      <button>write</button>
+      <button class="primary-btn">write</button>
     </Header>
     <div id="content">
       <h1 class="font-bold text-4xl">I was wrong about macOS Big Sur...</h1>

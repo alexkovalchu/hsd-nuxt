@@ -1,7 +1,7 @@
 <template>
   <header class="bg-white shadow-md">
     <div class="flex justify-between items-center md:px-24 md:py-3">
-      <a class="font-bold logo" href="">HSD</a>
+      <a class="font-bold logo" href=""><img class="inline-block md:mr-3" src="~/assets/images/logo.svg" alt="">HSD</a>
       <div class="flex items-center">
         <slot></slot>
       </div>
@@ -25,17 +25,5 @@ header > div #profile {
   width: 34px;
   height: 34px;
   margin-left: 20px;
-}
-
-header > div button {
-  margin-left: 30px;
-  padding: 10px 16px;
-  text-transform: uppercase;
-  background: #101010;
-  color: white;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  font-size: 14px;
 }
 </style>

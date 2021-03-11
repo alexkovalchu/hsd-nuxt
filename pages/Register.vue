@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header>
-      <button>home</button>
+      <button class="primary-btn">home</button>
     </Header>
     <div class="vScreen font-roboto md:flex md:items-center">
       <SignUpForm></SignUpForm>
