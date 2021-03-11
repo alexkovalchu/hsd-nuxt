@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper font-sans">
     <Nuxt/>
   </div>
 </template>
@@ -21,7 +21,6 @@ export default {
 
 .wrapper {
   background: #fafafa;
-  font-family: 'Tinos', serif;
 }
 
 .logo {

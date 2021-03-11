@@ -1,5 +1,5 @@
 <template>
-  <div class="md:mx-56 md:my-12">
+  <div class="md:mx-56 md:my-12 font-roboto">
     <h1 class="border-b border-gray-400 md:text-3xl md:pb-4">Account Settings</h1>
     <div class="md:flex md:mt-16">
       <div class="md:w-3/12">
@@ -97,9 +97,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-* {
-  font-family: 'Roboto', sans-serif;
-}
-</style>
