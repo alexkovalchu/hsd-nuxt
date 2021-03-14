@@ -1,5 +1,4 @@
 // tailwind.config.js
-const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: [
@@ -12,15 +11,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
-      fontFamily: {
-        sans: ["Tinos", ...defaultTheme.fontFamily.sans],
-        roboto: ["Roboto", ...defaultTheme.fontFamily.sans]
+    fontFamily: {
+      'tinos': ['Tinos', 'sans-serif'],
+      'roboto': ['Roboto', 'sans-serif'],
     }
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/forms')
-  ],
+  plugins: [],
 }

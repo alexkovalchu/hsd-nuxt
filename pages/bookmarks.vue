@@ -5,7 +5,7 @@
       <img id="profile" src="~/assets/images/profile.svg" alt="">
       <button class="primary-btn">write</button>
     </Header>
-    <div class="md:mx-24 md:my-12">
+    <div class="vScreen md:mx-24 md:my-12">
       <div class="font-roboto md:flex md:justify-between md:items-center md:mb-12">
         <div class="md:flex md:items-center">
           <img class="w-full h-full flex justify-center items-center rounded-full border-2 border-gray-400"
@@ -196,7 +196,7 @@
 </template>
 
 <script>
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import Footer from "../components/Footer";
 
 export default {

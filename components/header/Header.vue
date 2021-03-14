@@ -1,7 +1,7 @@
 <template>
   <header class="bg-white shadow-md">
     <div class="flex justify-between items-center md:px-24 md:py-3">
-      <a class="font-bold logo" href=""><img class="inline-block md:mr-3" src="~/assets/images/logo.svg" alt="">HSD</a>
+      <a class="font-bold logo font-tinos" href=""><img class="inline-block md:mr-3" src="~/assets/images/logo.svg" alt="">HSD</a>
       <div class="flex items-center">
         <slot></slot>
       </div>
