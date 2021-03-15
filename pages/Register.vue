@@ -12,7 +12,7 @@
 
 <script>
 import SignUpForm from "../components/SignUpForm";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import Footer from "../components/Footer";
 
 export default {
@@ -22,7 +22,4 @@ export default {
 </script>
 
 <style scoped>
-.vScreen {
-  min-height: calc(100vh - 138px);
-}
 </style>

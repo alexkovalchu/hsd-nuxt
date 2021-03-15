@@ -12,14 +12,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'
-      },
     ]
   },
 
@@ -49,8 +41,8 @@ export default {
     download: true,
     display: 'swap',
     families: {
-      Tinos: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      Roboto: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      Tinos: true,
+      Roboto: true,
     },
   },
 

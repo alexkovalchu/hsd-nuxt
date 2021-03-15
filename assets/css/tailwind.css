@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .font-tinos {
-    font-family: 'Tinos', serif;
-  }
-
-  .font-roboto {
-    font-family: 'Roboto', sans-serif;
-  }
-}
-
 .primary-btn {
   margin-left: 30px;
   padding: 10px 16px;
@@ -22,4 +12,17 @@
   -moz-border-radius: 6px;
   border-radius: 6px;
   font-size: 14px;
+}
+
+.vScreen {
+  min-height: calc(100vh - 138px);
+}
+
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+
+.blur {
+  filter: blur(5px);
 }
