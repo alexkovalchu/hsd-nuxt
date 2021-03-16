@@ -26,3 +26,19 @@ body.modal-active {
 .blur {
   filter: blur(5px);
 }
+
+.pink {
+  background: #FFCAD7;
+}
+
+.gray {
+  background: #E2D4FF;
+}
+
+.yellow {
+  background: #FDD469;
+}
+
+.green {
+  background: #9FF8AD;
+}
