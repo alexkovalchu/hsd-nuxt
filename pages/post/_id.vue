@@ -53,14 +53,14 @@
           <div class="bg-black relative flex items-center md:p-2 rounded-md">
             <img class="border-r border-gray-400 md:pr-4" @click="selectHighlighted" src="~/assets/images/highlight.svg"
                  alt="">
-            <div @click="changeColor" :class="{'selectedColor': currentColor==='pink'}"
-                 class="w-4 h-4 md:ml-3 flex items-center justify-center rounded-full pink"></div>
-            <div @click="currentColor='gray'" :class="{'selectedColor': currentColor==='gray'}"
-                 class="w-4 h-4 md:ml-3 flex items-center justify-center rounded-full gray"></div>
-            <div @click="currentColor='yellow'" :class="{'selectedColor': currentColor==='yellow'}"
-                 class="w-4 h-4 md:ml-3 flex items-center justify-center rounded-full yellow"></div>
-            <div @click="currentColor='green'" :class="{'selectedColor': currentColor==='green'}"
-                 class="w-4 h-4 md:ml-3 flex items-center justify-center rounded-full green"></div>
+            <button @click="changeColor('pink')" :class="{'selectedColor': currentColor==='pink'}"
+                    class="w-4 h-4 md:ml-3 cursor-pointer flex items-center justify-center rounded-full pink"></button>
+            <button @click="changeColor('gray')" :class="{'selectedColor': currentColor==='gray'}"
+                    class="w-4 h-4 md:ml-3 cursor-pointer flex items-center justify-center rounded-full gray"></button>
+            <button @click="changeColor('yellow')" :class="{'selectedColor': currentColor==='yellow'}"
+                    class="w-4 h-4 md:ml-3 cursor-pointer flex items-center justify-center rounded-full yellow"></button>
+            <button @click="changeColor('green')" :class="{'selectedColor': currentColor==='green'}"
+                    class="w-4 h-4 md:ml-3 cursor-pointer flex items-center justify-center rounded-full green"></button>
           </div>
         </div>
       </div>
@@ -92,21 +92,50 @@ export default {
       top: 0,
       showIcon: false,
       currentColor: 'gray',
-      highlights: []
+      highlights: [],
+      currentSpan: null
     }
   },
   mounted() {
     const content = document.querySelector('#content')
     content.addEventListener('mouseup', this.highlight)
+    content.addEventListener('mouseover', (e) => {
+      const menu = document.querySelector('.highlightIcon');
+      if (e.target.matches('span')) {
+        const {offsetTop, offsetLeft} = e.target;
+        this.left = offsetLeft
+        this.top = offsetTop + window.scrollY - 50
+        this.showIcon = true
+        e.target.onmouseleave = (e) => {
+          this.currentSpan = e.target
+          // setTimeout((e) => {
+          //   if (menu.contains(e.target)) {
+          //     console.log('111')
+          //   }
+          //   this.showIcon = false
+          // }, 500)
+        }
+        menu.onmouseleave = (e) => {
+          this.showIcon = false
+          this.currentSpan = null
+        }
+      }
+    })
   },
   methods: {
     highlight(e) {
-      const highlightContainer = document.querySelector('.highlightIcon');
-      if (highlightContainer.contains(e.target)) {
+      // const highlightContainer = document.querySelector('.highlightIcon');
+      const selection = window.getSelection();
+      if (!selection.toString().length) {
+        this.showIcon = false
         return;
       }
-      const selection = window.getSelection();
+
       const selectionRange = selection.getRangeAt(0);
+      if (selection.toString().length === 0) {
+        this.showIcon = false;
+        return;
+      }
       // startNode is the element that the selection starts in
       const startNode = selectionRange.startContainer.parentNode
       // endNode is the element that the selection ends in
@@ -136,9 +165,15 @@ export default {
     },
     selectHighlighted() {
       const selection = window.getSelection();
+      if (!selection.toString().length) {
+        this.showIcon = false
+        return;
+      }
       const selectionRange = selection.getRangeAt(0);
+      const uuid = `h-${Date.now().toString()}`;
       let span = document.createElement('span');
       span.setAttribute('class', this.currentColor)
+      span.setAttribute('id', uuid);
       selectionRange.surroundContents(span);
       this.showIcon = false
       const discussions = [
@@ -159,7 +194,7 @@ export default {
         }
       ]
       const highlight = {
-        id: Math.floor((Math.random() * 100) + 1),
+        id: uuid,
         text: selection.toString(),
         color: this.currentColor,
         discussions
@@ -167,9 +202,22 @@ export default {
       this.highlights.push(highlight)
       selection.removeAllRanges()
     },
-    changeColor() {
-      const selection = window.getSelection();
-      console.log(selection.toString())
+    changeColor(color) {
+      this.currentColor = color;
+      if (this.currentSpan) {
+        this.currentSpan.removeAttribute('class')
+        this.currentSpan.classList.add(color)
+        const id = this.currentSpan.getAttribute('id');
+        const highlights = [...this.highlights]
+        this.highlights = highlights.map(item => {
+          if (item.id === id) {
+            item.color = color
+          }
+          return item;
+        });
+      } else {
+        this.selectHighlighted()
+      }
     },
     showSignUpForm() {
       const body = document.querySelector('body')
@@ -239,19 +287,5 @@ export default {
   box-shadow: 0 0 0px 2px #eee;
 }
 
-.pink {
-  background: #FFCAD7;
-}
 
-.gray {
-  background: #E2D4FF;
-}
-
-.yellow {
-  background: #FDD469;
-}
-
-.green {
-  background: #9FF8AD;
-}
 </style>

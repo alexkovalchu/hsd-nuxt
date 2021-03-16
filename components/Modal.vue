@@ -51,7 +51,8 @@ export default {
   name: "Modal",
   mounted() {
     window.addEventListener('click', function (e) {
-      if (!e.target.matches('modal-content') && !e.target.getAttribute('data-target')) {
+      const modalContent = document.querySelector('.modal-content');
+      if (!modalContent.contains(e.target) && !e.target.getAttribute('data-target')) {
         const el = document.querySelector('#modal');
         if (el) {
           if (!el.classList.contains('opacity-0')) {
