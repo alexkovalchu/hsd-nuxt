@@ -1,7 +1,4 @@
 export default {
-  // Nuxt target: https://nuxtjs.org/api/configuration-target
-  target: 'static',
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'hsd',
